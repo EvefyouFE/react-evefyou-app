@@ -1,0 +1,79 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2021",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "vite/client",
+      "node"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "app/*"
+      ],
+      "@models/*": [
+        "app/common/models/*"
+      ],
+      "@components/*": [
+        "app/components/*"
+      ],
+      "@common/*": [
+        "app/common/*"
+      ],
+      "@core/*": [
+        "app/core/*"
+      ],
+      "@config/*": [
+        "app/common/config/*"
+      ],
+      "@utils/*": [
+        "app/common/utils/*"
+      ],
+      "@hooks/*": [
+        "app/core/hooks/*"
+      ],
+      "@providers/*": [
+        "app/core/providers/*"
+      ],
+      "@ui/*": [
+        "app/ui/*"
+      ],
+      "@modules/*": [
+        "app/modules/*"
+      ],
+      "@pages/*": [
+        "app/pages/*"
+      ],
+      "@sections/*": [
+        "app/sections/*"
+      ]
+    }
+  },
+  "include": [
+    "app"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

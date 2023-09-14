@@ -1,0 +1,1 @@
+export * from 'react-evefyou-ui/layouts/AdminLayout'

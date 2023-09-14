@@ -1,0 +1,493 @@
+{
+  "name": "react-evefyou-app",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "./cjs/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./cjs/index.js"
+    },
+    "./windicss": {
+      "import": "./css/windi.css",
+      "require": "./css/windi.css"
+    },
+    "./locales/zh_CN": {
+      "import": "./es/locales/zh_CN/index.js",
+      "require": "./cjs/locales/zh_CN/index.js",
+      "types": "./es/locales/zh_CN/index.d.ts"
+    },
+    "./locales/en_US": {
+      "import": "./es/locales/en_US/index.js",
+      "require": "./cjs/locales/en_US/index.js",
+      "types": "./es/locales/zh_CN/index.d.ts"
+    },
+    "./AdminApp": {
+      "import": "./es/AdminApp/index.js",
+      "require": "./cjs/AdminApp/index.js"
+    },
+    "./common/config": {
+      "import": "./es/common/config/index.js",
+      "require": "./cjs/common/config/index.js"
+    },
+    "./common/enums": {
+      "import": "./es/common/enums/index.js",
+      "require": "./cjs/common/enums/index.js"
+    },
+    "./common/models": {
+      "import": "./es/common/models/index.js",
+      "require": "./cjs/common/models/index.js"
+    },
+    "./core/providers/AppProvider": {
+      "import": "./es/core/providers/AppProvider/index.js",
+      "require": "./cjs/core/providers/AppProvider/index.js"
+    },
+    "./core/providers/AxiosProvider": {
+      "import": "./es/core/providers/AxiosProvider/index.js",
+      "require": "./cjs/core/providers/AxiosProvider/index.js"
+    },
+    "./core/stores": {
+      "import": "./es/core/stores/index.js",
+      "require": "./cjs/core/stores/index.js"
+    },
+    "./core/router": {
+      "import": "./es/core/router/index.js",
+      "require": "./cjs/core/router/index.js"
+    },
+    "./core/request": {
+      "import": "./es/core/request/index.js",
+      "require": "./cjs/core/request/index.js"
+    },
+    "./core/query": {
+      "import": "./es/core/query/index.js",
+      "require": "./cjs/core/query/index.js"
+    },
+    "./core/hooks": {
+      "import": "./es/core/hooks/index.js",
+      "require": "./cjs/core/hooks/index.js"
+    },
+    "./core/hooks/defineRecoilSelector": {
+      "require": "./cjs/core/hooks/defineRecoilSelector/index.js",
+      "import": "./es/core/hooks/defineRecoilSelector/index.js"
+    },
+    "./core/hooks/defineRecoilState": {
+      "require": "./cjs/core/hooks/defineRecoilState/index.js",
+      "import": "./es/core/hooks/defineRecoilState/index.js"
+    },
+    "./core/hooks/defineRecoilValue": {
+      "require": "./cjs/core/hooks/defineRecoilValue/index.js",
+      "import": "./es/core/hooks/defineRecoilValue/index.js"
+    },
+    "./core/hooks/defineUseState": {
+      "require": "./cjs/core/hooks/defineUseState/index.js",
+      "import": "./es/core/hooks/defineUseState/index.js"
+    },
+    "./core/hooks/useActiveItemsState": {
+      "require": "./cjs/core/hooks/useActiveItemsState/index.js",
+      "import": "./es/core/hooks/useActiveItemsState/index.js"
+    },
+    "./core/hooks/useCompInstance": {
+      "require": "./cjs/core/hooks/useCompInstance/index.js",
+      "import": "./es/core/hooks/useCompInstance/index.js"
+    },
+    "./core/hooks/useDesign": {
+      "require": "./cjs/core/hooks/useDesign/index.js",
+      "import": "./es/core/hooks/useDesign/index.js"
+    },
+    "./core/hooks/useItemsState": {
+      "require": "./cjs/core/hooks/useItemsState/index.js",
+      "import": "./es/core/hooks/useItemsState/index.js"
+    },
+    "./core/hooks/useKeyItemsState": {
+      "require": "./cjs/core/hooks/useKeyItemsState/index.js",
+      "import": "./es/core/hooks/useKeyItemsState/index.js"
+    },
+    "./core/hooks/useKeysState": {
+      "require": "./cjs/core/hooks/useKeysState/index.js",
+      "import": "./es/core/hooks/useKeysState/index.js"
+    },
+    "./core/hooks/useMountEffect": {
+      "require": "./cjs/core/hooks/useMountEffect/index.js",
+      "import": "./es/core/hooks/useMountEffect/index.js"
+    },
+    "./core/hooks/useNativeProps": {
+      "require": "./cjs/core/hooks/useNativeProps/index.js",
+      "import": "./es/core/hooks/useNativeProps/index.js"
+    },
+    "./core/hooks/useProps": {
+      "require": "./cjs/core/hooks/useProps/index.js",
+      "import": "./es/core/hooks/useProps/index.js"
+    },
+    "./core/hooks/usePropsState": {
+      "require": "./cjs/core/hooks/usePropsState/index.js",
+      "import": "./es/core/hooks/usePropsState/index.js"
+    },
+    "./core/hooks/useRelationState": {
+      "require": "./cjs/core/hooks/useRelationState/index.js",
+      "import": "./es/core/hooks/useRelationState/index.js"
+    },
+    "./core/hooks/useSelectItemsState": {
+      "require": "./cjs/core/hooks/useSelectItemsState/index.js",
+      "import": "./es/core/hooks/useSelectItemsState/index.js"
+    },
+    "./core/hooks/useUnmountEffect": {
+      "require": "./cjs/core/hooks/useUnmountEffect/index.js",
+      "import": "./es/core/hooks/useUnmountEffect/index.js"
+    },
+    "./common": {
+      "require": "./cjs/common/index.js",
+      "import": "./es/common/index.js"
+    },
+    "./common/locale": {
+      "require": "./cjs/common/locale/index.js",
+      "import": "./es/common/locale/index.js"
+    },
+    "./common/utils": {
+      "import": "./es/common/utils/index.js",
+      "require": "./cjs/common/utils/index.js"
+    },
+    "./common/utils/date": {
+      "require": "./cjs/common/utils/date/index.js",
+      "import": "./es/common/utils/date/index.js"
+    },
+    "./common/utils/dom": {
+      "require": "./cjs/common/utils/dom/index.js",
+      "import": "./es/common/utils/dom/index.js"
+    },
+    "./common/utils/dom/addClass": {
+      "require": "./cjs/common/utils/dom/addClass/index.js",
+      "import": "./es/common/utils/dom/addClass/index.js"
+    },
+    "./common/utils/dom/removeClass": {
+      "require": "./cjs/common/utils/dom/removeClass/index.js",
+      "import": "./es/common/utils/dom/removeClass/index.js"
+    },
+    "./common/utils/dom/getHeight": {
+      "require": "./cjs/common/utils/dom/getHeight/index.js",
+      "import": "./es/common/utils/dom/getHeight/index.js"
+    },
+    "./common/utils/dom/getPopupContainer": {
+      "require": "./cjs/common/utils/dom/getPopupContainer/index.js",
+      "import": "./es/common/utils/dom/getPopupContainer/index.js"
+    },
+    "./common/utils/dom/getViewportOffset": {
+      "require": "./cjs/common/utils/dom/getViewportOffset/index.js",
+      "import": "./es/common/utils/dom/getViewportOffset/index.js"
+    },
+    "./common/utils/generate": {
+      "require": "./cjs/common/utils/generate/index.js",
+      "import": "./es/common/utils/generate/index.js"
+    },
+    "./common/utils/generate/uuid": {
+      "require": "./cjs/common/utils/generate/uuid/index.js",
+      "import": "./es/common/utils/generate/uuid/index.js"
+    },
+    "./common/utils/list": {
+      "require": "./cjs/common/utils/list/index.js",
+      "import": "./es/common/utils/list/index.js"
+    },
+    "./common/utils/list/convertListToTree": {
+      "require": "./cjs/common/utils/list/convertListToTree/index.js",
+      "import": "./es/common/utils/list/convertListToTree/index.js"
+    },
+    "./common/utils/list/isSubList": {
+      "require": "./cjs/common/utils/list/isSubList/index.js",
+      "import": "./es/common/utils/list/isSubList/index.js"
+    },
+    "./common/utils/object": {
+      "require": "./cjs/common/utils/object/index.js",
+      "import": "./es/common/utils/object/index.js"
+    },
+    "./common/utils/object/deepCompareObj": {
+      "require": "./cjs/common/utils/object/deepCompareObj/index.js",
+      "import": "./es/common/utils/object/deepCompareObj/index.js"
+    },
+    "./common/utils/object/deepMergeObjectByKeys": {
+      "require": "./cjs/common/utils/object/deepMergeObjectByKeys/index.js",
+      "import": "./es/common/utils/object/deepMergeObjectByKeys/index.js"
+    },
+    "./common/utils/object/deepSetObjectByKeys": {
+      "require": "./cjs/common/utils/object/deepSetObjectByKeys/index.js",
+      "import": "./es/common/utils/object/deepSetObjectByKeys/index.js"
+    },
+    "./modules": {
+      "import": "./es/modules/index.js",
+      "require": "./cjs/modules/index.js"
+    },
+    "./modules/AppLogo": {
+      "import": "./es/modules/AppLogo/index.js",
+      "require": "./cjs/modules/AppLogo/index.js"
+    },
+    "./modules/Logout": {
+      "import": "./es/modules/Logout/index.js",
+      "require": "./cjs/modules/Logout/index.js"
+    },
+    "./modules/LoginForm": {
+      "import": "./es/modules/LoginForm/index.js",
+      "require": "./cjs/modules/LoginForm/index.js"
+    },
+    "./modules/LocaleDropdown": {
+      "import": "./es/modules/LocaleDropdown/index.js",
+      "require": "./cjs/modules/LocaleDropdown/index.js"
+    },
+    "./modules/UserActionDropdown": {
+      "import": "./es/modules/UserActionDropdown/index.js",
+      "require": "./cjs/modules/UserActionDropdown/index.js"
+    },
+    "./modules/ReminderPopoverTabs": {
+      "import": "./es/modules/ReminderPopoverTabs/index.js",
+      "require": "./cjs/modules/ReminderPopoverTabs/index.js"
+    },
+    "./sections": {
+      "import": "./es/sections/index.js",
+      "require": "./cjs/sections/index.js"
+    },
+    "./sections/ReminderSection": {
+      "import": "./es/sections/ReminderSection/index.js",
+      "require": "./cjs/sections/ReminderSection/index.js"
+    },
+    "./pages": {
+      "import": "./es/pages/index.js",
+      "require": "./cjs/pages/index.js"
+    },
+    "./pages/CommonPage": {
+      "import": "./es/pages/CommonPage/index.js",
+      "require": "./cjs/pages/CommonPage/index.js"
+    },
+    "./pages/AdminPage": {
+      "import": "./es/pages/AdminPage/index.js",
+      "require": "./cjs/pages/AdminPage/index.js"
+    },
+    "./pages/LoginPage": {
+      "import": "./es/pages/LoginPage/index.js",
+      "require": "./cjs/pages/LoginPage/index.js"
+    },
+    "./ui": {
+      "import": "./es/ui/index.js",
+      "require": "./cjs/ui/index.js"
+    },
+    "./ui/components": {
+      "import": "./es/ui/components/index.js",
+      "require": "./cjs/ui/components/index.js"
+    },
+    "./ui/layouts": {
+      "import": "./es/ui/layouts/index.js",
+      "require": "./cjs/ui/layouts/index.js"
+    },
+    "./ui/containers": {
+      "import": "./es/ui/containers/index.js",
+      "require": "./cjs/ui/containers/index.js"
+    },
+    "./ui/layouts/AdminLayout": {
+      "import": "./es/ui/layouts/AdminLayout/index.js",
+      "require": "./cjs/ui/layouts/AdminLayout/index.js"
+    },
+    "./ui/layouts/CommonLayout": {
+      "import": "./es/ui/layouts/CommonLayout/index.js",
+      "require": "./cjs/ui/layouts/CommonLayout/index.js"
+    },
+    "./ui/layouts/BasicFooter": {
+      "import": "./es/ui/layouts/BasicFooter/index.js",
+      "require": "./cjs/ui/layouts/BasicFooter/index.js"
+    },
+    "./ui/layouts/BasicHeader": {
+      "import": "./es/ui/layouts/BasicHeader/index.js",
+      "require": "./cjs/ui/layouts/BasicHeader/index.js"
+    },
+    "./ui/layouts/BasicSider": {
+      "import": "./es/ui/layouts/BasicSider/index.js",
+      "require": "./cjs/ui/layouts/BasicSider/index.js"
+    },
+    "./ui/containers/BasicContainer": {
+      "import": "./es/ui/containers/BasicContainer/index.js",
+      "require": "./cjs/ui/containers/BasicContainer/index.js"
+    },
+    "./ui/containers/TabsContainer": {
+      "import": "./es/ui/containers/TabsContainer/index.js",
+      "require": "./cjs/ui/containers/TabsContainer/index.js"
+    },
+    "./ui/containers/TableContainer": {
+      "import": "./es/ui/containers/TableContainer/index.js",
+      "require": "./cjs/ui/containers/TableContainer/index.js"
+    },
+    "./ui/containers/KeepAliveContainer": {
+      "import": "./es/ui/containers/KeepAliveContainer/index.js",
+      "require": "./cjs/ui/containers/KeepAliveContainer/index.js"
+    },
+    "./ui/components/BasicBreadcrumb": {
+      "import": "./es/ui/components/BasicBreadcrumb/index.js",
+      "require": "./cjs/ui/components/BasicBreadcrumb/index.js"
+    },
+    "./ui/components/BasicButton": {
+      "import": "./es/ui/components/BasicButton/index.js",
+      "require": "./cjs/ui/components/BasicButton/index.js"
+    },
+    "./ui/components/BasicDropdown": {
+      "import": "./es/ui/components/BasicDropdown/index.js",
+      "require": "./cjs/ui/components/BasicDropdown/index.js"
+    },
+    "./ui/components/BasicForm": {
+      "import": "./es/ui/components/BasicForm/index.js",
+      "require": "./cjs/ui/components/BasicForm/index.js"
+    },
+    "./ui/components/BasicHelp": {
+      "import": "./es/ui/components/BasicHelp/index.js",
+      "require": "./cjs/ui/components/BasicHelp/index.js"
+    },
+    "./ui/components/BasicIcon": {
+      "import": "./es/ui/components/BasicIcon/index.js",
+      "require": "./cjs/ui/components/BasicIcon/index.js"
+    },
+    "./ui/components/BasicMenu": {
+      "import": "./es/ui/components/BasicMenu/index.js",
+      "require": "./cjs/ui/components/BasicMenu/index.js"
+    },
+    "./ui/components/BasicModal": {
+      "import": "./es/ui/components/BasicModal/index.js",
+      "require": "./cjs/ui/components/BasicModal/index.js"
+    },
+    "./ui/components/BasicPopButton": {
+      "import": "./es/ui/components/BasicPopButton/index.js",
+      "require": "./cjs/ui/components/BasicPopButton/index.js"
+    },
+    "./ui/components/BasicScroll": {
+      "import": "./es/ui/components/BasicScroll/index.js",
+      "require": "./cjs/ui/components/BasicScroll/index.js"
+    },
+    "./ui/components/BasicTable": {
+      "import": "./es/ui/components/BasicTable/index.js",
+      "require": "./cjs/ui/components/BasicTable/index.js"
+    },
+    "./ui/components/BasicTitle": {
+      "import": "./es/ui/components/BasicTitle/index.js",
+      "require": "./cjs/ui/components/BasicTitle/index.js"
+    },
+    "./ui/components/BasicFallback": {
+      "import": "./es/ui/components/BasicFallback/index.js",
+      "require": "./cjs/ui/components/BasicFallback/index.js"
+    },
+    "./ui/components/BasicNProgress": {
+      "import": "./es/ui/components/BasicNProgress/index.js",
+      "require": "./cjs/ui/components/BasicNProgress/index.js"
+    },
+    "./ui/components/BasicResult": {
+      "import": "./es/ui/components/BasicResult/index.js",
+      "require": "./cjs/ui/components/BasicResult/index.js"
+    },
+    "./ui/components/BasicTabs": {
+      "import": "./es/ui/components/BasicTabs/index.js",
+      "require": "./cjs/ui/components/BasicTabs/index.js"
+    },
+    "./ui/components/BasicList": {
+      "import": "./es/ui/components/BasicList/index.js",
+      "require": "./cjs/ui/components/BasicList/index.js"
+    },
+    "./ui/components/MessageHelper": {
+      "import": "./es/ui/components/MessageHelper/index.js",
+      "require": "./cjs/ui/components/MessageHelper/index.js"
+    }
+  },
+  "files": [
+    "cjs",
+    "es",
+    "css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:tsc": "tsc",
+    "clean": "rimraf node_modules",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf locale && rimraf types",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvefyouFE/react-evefyou-app.git"
+  },
+  "keywords": [
+    "react",
+    "project",
+    "evefyou"
+  ],
+  "author": "EvefyouFE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvefyouFE/react-evefyou-app/issues"
+  },
+  "homepage": "https://github.com/EvefyouFE/react-evefyou-app#readme",
+  "dependencies": {
+    "react-evefyou-common": "^1.0.17",
+    "react-evefyou-hooks": "^1.0.28",
+    "react-evefyou-router": "^1.0.16",
+    "react-evefyou-ui": "^1.0.28"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": ">=5.0.1",
+    "@dnd-kit/core": ">=6.0.8",
+    "@dnd-kit/modifiers": ">=6.0.1",
+    "@dnd-kit/sortable": ">=7.0.2",
+    "@dnd-kit/utilities": ">=3.2.1",
+    "@emotion/css": ">=11.11.0",
+    "@iconify/react": ">=4.1.1",
+    "@tanstack/react-query": ">=4.28.0",
+    "ahooks": ">=3.7.6",
+    "antd": ">=5.6.3",
+    "axios": ">=1.3.4",
+    "classnames": ">=2.3.2",
+    "crypto-js": ">=4.1.1",
+    "moment": ">=2.29.4",
+    "nprogress": ">=0.2.0",
+    "qs": ">=6.11.1",
+    "ramda": ">=0.29.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0",
+    "react-draggable": ">=4.4.5",
+    "react-error-boundary": ">=4.0.4",
+    "react-intl": ">=6.4.4",
+    "react-router": ">=6.10.0",
+    "react-router-dom": ">=6.10.0",
+    "recoil": ">=0.7.7",
+    "uuid": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@ant-design/colors": "^7.0.0",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/crypto-js": "^4.1.1",
+    "@types/node": "^20.5.1",
+    "@types/qs": "^6.9.7",
+    "@types/ramda": "^0.29.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "consola": "^3.2.3",
+    "cssnano": "^6.0.1",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "less": "^4.1.3",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "postcss-html": "^1.5.0",
+    "postcss-less": "^6.0.0",
+    "postcss-preset-env": "^8.3.2",
+    "rimraf": "^5.0.1",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.1",
+    "vite-plugin-lib-inject-css": "^1.2.1",
+    "vite-plugin-svgr": "^3.2.0",
+    "vite-plugin-windicss": "^1.9.0",
+    "vite-tsconfig-paths": "^4.2.0",
+    "windicss": "^3.5.6"
+  }
+}

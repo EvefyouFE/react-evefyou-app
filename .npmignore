@@ -1,0 +1,55 @@
+# 排除不必要的目录和文件
+node_modules/
+ui/
+components/
+coverage/
+build/
+src/
+docs/
+
+# 排除特定类型的文件
+*.log
+*.tmp
+
+# 排除测试相关文件
+test/
+tests/
+__tests__/
+
+# 排除版本控制文件和工具配置文件
+.git/
+.gitignore
+.editorconfig
+.eslintrc
+.prettierrc
+
+# 排除开发相关文件
+*.bak
+*.swp
+
+# 如果你使用 TypeScript，排除编译输出目录和 TypeScript 配置
+tsconfig.json
+tsconfig.*.json
+*.tsbuildinfo
+
+# 如果你使用 Babel，排除 Babel 配置
+.babelrc
+babel.config.js
+
+# 如果你使用 Rollup，排除 Rollup 配置
+rollup.config.js
+rollup.config.*js
+rollup.config.*.js
+
+# 如果你使用 vite，排除 Rollup 配置
+vite.config.ts
+
+# 如果你使用 Webpack，排除 Webpack 配置
+webpack.config.js
+webpack.config.*.js
+
+# 如果你使用 Jest，排除 Jest 配置
+jest.config.js
+
+# 如果你使用其他构建工具或工具链，根据情况排除配置文件
+windi.config.js
