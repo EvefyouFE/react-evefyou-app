@@ -22,7 +22,7 @@ import { useAuthRecoilState } from "@core/stores/auth";
 import { useProRecoilValue } from "@core/stores/pro";
 import { useLayoutSettingValue } from "@core/hooks/pro/setting/useLayoutSetting";
 import { useAppContext } from "@core/providers/AppProvider";
-import { AppLogo } from "@/modules/AppLogo";
+import { AppLogo } from "react-evefyou-ui/modules/AppLogo";
 import 'virtual:windi.css';
 import { useDesign } from "react-evefyou-hooks/useDesign";
 import classNames from "classnames";

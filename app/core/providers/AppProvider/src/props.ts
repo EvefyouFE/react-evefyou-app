@@ -3,8 +3,8 @@ import { LocaleInfo } from "./typing";
 
 export interface AppProviderProps extends AxiosProviderProps {
   prefixCls?: string;
+  name?: string;
   author?: string;
-  organization?: string;
   copyright?: string;
   locales?: LocaleInfo[];
 }

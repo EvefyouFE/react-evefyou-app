@@ -7,12 +7,10 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import zhCN_ui from 'react-evefyou-ui/locales/zh_CN'
-import { modules_zhCN } from "./modules";
 import { pages_zhCN } from "./pages";
 
 export default {
   ...zhCN_ui,
-  ...modules_zhCN,
   ...pages_zhCN,
   'common.text.ok': '确认',
   'sys.app.logout.tip': '温馨提醒',

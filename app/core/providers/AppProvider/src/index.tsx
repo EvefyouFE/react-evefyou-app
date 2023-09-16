@@ -18,9 +18,9 @@ import { BreakpointsAntd } from "@common/enums/breakpointsEnum";
 export const AppProvider: FC<AppProviderProps> = (props) => {
   const {
     children,
-    author = '',
-    organization = '',
-    copyright = DEFAULT_APP_VALUE.copyright?.replace('[author]', author).replace('[organization]', organization),
+    name = DEFAULT_APP_VALUE.name,
+    author = DEFAULT_APP_VALUE.author,
+    copyright = DEFAULT_APP_VALUE.copyright?.replace('[name]', name).replace('[author]', author),
     locales
   } = props;
   const breakpoints = useBreakpoint(BreakpointsAntd);
@@ -40,7 +40,14 @@ export const AppProvider: FC<AppProviderProps> = (props) => {
 
   return (
     <AppContext.Provider
-      value={{ ...DEFAULT_APP_VALUE, isMobile: isMobileState, author, organization, copyright, locales }}
+      value={{
+        isMobile: isMobileState,
+        prefixCls: DEFAULT_APP_VALUE.prefixCls,
+        name,
+        author,
+        copyright,
+        locales
+      }}
     >
       <ModalProvider>{children}</ModalProvider>
     </AppContext.Provider>

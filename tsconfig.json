@@ -58,13 +58,13 @@
         "app/ui/*"
       ],
       "@modules/*": [
-        "app/modules/*"
+        "app/ui/modules/*"
       ],
       "@pages/*": [
         "app/pages/*"
       ],
       "@sections/*": [
-        "app/sections/*"
+        "app/ui/sections/*"
       ]
     }
   },

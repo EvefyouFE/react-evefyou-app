@@ -74,6 +74,11 @@ export const getConfigFileName = (env: AppImportMetaEnv) =>
     .toUpperCase()
     .replace(/\s/g, '');
 
+export const getBaseName = () => {
+  const { env } = appEnvOptions
+  return env.VITE_PUBLIC_PATH
+}
+
 export function getAppEnvConfig() {
   const { env } = appEnvOptions
   const ENV_NAME = getConfigFileName(env);

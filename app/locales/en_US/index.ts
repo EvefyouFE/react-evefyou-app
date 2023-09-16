@@ -7,12 +7,10 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import enUS_ui from 'react-evefyou-ui/locales/en_US'
-import { modules_enUS } from "./modules";
 import { pages_enUS } from "./pages";
 
 export default {
   ...enUS_ui,
-  ...modules_enUS,
   ...pages_enUS,
   'common.text.ok': 'Ok',
   'sys.app.logout.tip': 'Reminder',

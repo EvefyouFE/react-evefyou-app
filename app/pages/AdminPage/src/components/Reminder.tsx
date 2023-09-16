@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { ReminderPopoverTabs } from "@modules/ReminderPopoverTabs"
+import { ReminderPopoverTabs } from "react-evefyou-ui/modules/ReminderPopoverTabs"
 import { PropsWithCls } from "react-evefyou-common"
 import { useDesign } from "react-evefyou-hooks/useDesign"
 import { AntdTabItem } from "react-evefyou-ui"
@@ -10,6 +10,7 @@ import { NoticeList } from "./NoticeList"
 import { MessageList } from "./MessageList"
 import { TodoList } from "./TodoList"
 import { formatBaseById } from "react-evefyou-common/locale"
+import 'virtual:windi.css';
 
 export const Reminder: React.FC<PropsWithCls> = ({
   className

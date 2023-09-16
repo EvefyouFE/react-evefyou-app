@@ -1,4 +1,4 @@
-import { FetchQueryOptions, MutationOptions, QueryClient, QueryFunction, QueryKey, QueryObserverOptions, UseMutationOptions, UseQueryOptions, useMutation, useQuery } from "@tanstack/react-query";
+import { FetchQueryOptions, MutationOptions, QueryClient, QueryFunction, QueryKey, QueryObserverOptions, UseMutationOptions, UseMutationResult, UseQueryOptions, UseQueryResult, useMutation, useQuery } from "@tanstack/react-query";
 import { AxiosRequestConfig } from "axios";
 import { values } from "ramda";
 import { FetchTypeEnum } from "@common/enums/queryEnum";
@@ -103,6 +103,20 @@ interface AsyncFn<T, D> {
 interface MultiFn<T, D> {
     <R>(cb: CbFn<T, R>, cb2: CbFn<T, Promise<R>>): RtFn<T, D, Promise<R>>
 }
+export interface QueryReturnType<T, D = any> {
+    optionsFn: FetchQueryOptionsFn<T, D>;
+    useQuery: RtFn<T, D, UseQueryResult<T, unknown>>;
+    getQueryData: RtFn<T, D, T | undefined>;
+    fetchQuery: RtFn<T, D, Promise<T>>;
+    useQueryRes: RtFn<Res<T>, D, UseQueryResult<Res<T>, unknown>>;
+    getQueryDataRes: RtFn<Res<T>, D, Res<T> | undefined>;
+    fetchQueryRes: RtFn<Res<T>, D, Promise<Res<T>>>;
+    getOrFetchData: RtFn<T, D, Promise<T | undefined>>;
+    getOrFetchDataRes: RtFn<Res<T>, D, Promise<Res<T> | undefined>>;
+}
+export interface MutationReturnType<T, D = any> {
+    useMutation: (opt?: UseMutationOptions<T, unknown, D>, cfg?: AxiosRequestConfig<D>, ropt?: PRequestOptions) => UseMutationResult<T, unknown, D, unknown>;
+}
 
 function getOptions<T, D>(
     optionsFn: FetchQueryOptionsFn<T, D>,
@@ -122,9 +136,10 @@ function getResOptions<T, D>(
     const queryKey = [...options.queryKey ?? [], 'res']
     return { ...options, queryKey, ...qopt }
 }
+
 export function query<T, D>(
     optionsFn: FetchQueryOptionsFn<T, D>
-) {
+): QueryReturnType<T, D> {
     const fn: Fn<T, D> = (cb) => (cfg, qopt, ropt) => cb(getOptions(optionsFn, cfg, qopt, ropt))
     const asyncFn: AsyncFn<T, D> = (cb) => async (cfg, qopt, ropt) => cb(getOptions(optionsFn, cfg, qopt, ropt))
     const resFn: Fn<Res<T>, D> = (cb) => (cfg, qopt, ropt = { isTransformResponse: false }) =>
@@ -176,7 +191,7 @@ export function queryFetch<T, D = any>(
     d_cfg: AxiosRequestConfig<D>,
     qopt: ExtQueryOptions<T> = { fetchType: FetchTypeEnum.getOne },
     d_ropt?: PRequestOptions
-) {
+): QueryReturnType<T, D> {
     const queryOptionsFn = (
         cfg?: AxiosRequestConfig<D>,
         ropt?: PRequestOptions
@@ -187,7 +202,7 @@ export function queryFetchPage<T, D = any>(
     d_cfg: AxiosRequestConfig<D>,
     qopt: ExtQueryOptions<T> = { fetchType: FetchTypeEnum.getPage },
     d_ropt?: PRequestOptions
-) {
+): QueryReturnType<T, D> {
     return queryFetch(d_cfg, qopt, d_ropt)
 }
 

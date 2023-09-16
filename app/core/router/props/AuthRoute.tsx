@@ -10,10 +10,10 @@ import { FC } from 'react';
 import { BasicResult } from "react-evefyou-ui/components/BasicResult";
 import { Navigate, RouteProps, useLoaderData } from 'react-router';
 import { usePermission } from '@hooks/pro/usePermission';
-import { HomeLoaderData } from "./loader";
+import { IndexLoaderData } from "./loader";
 
 export const AuthRoute: FC<RouteProps> = ({ children }) => {
-  const { token } = useLoaderData() as HomeLoaderData;
+  const { token } = useLoaderData() as IndexLoaderData;
   const { authenticateRouting } = usePermission();
   if (!token) {
     return <Navigate to="/login" />;

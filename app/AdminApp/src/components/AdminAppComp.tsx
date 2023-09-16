@@ -30,13 +30,11 @@ export const AdminAppComp: React.FC<AdminAppCompProps> = ({
   locales,
   locale: defaultLocale = 'zh-cn',
   children,
-  viewsPaths
-  // onErrorInterceptor,
-  // onNotAuthenticated,
-  // onNotAuthorized,
-  // onResponseInterceptor,
-  // onSystemError,
-  // onTimeout
+  viewsPaths,
+  name,
+  author,
+  copyright,
+  ...rest
 }) => {
 
   const [
@@ -89,8 +87,13 @@ export const AdminAppComp: React.FC<AdminAppCompProps> = ({
           >
             <BasicNProgress>
               <Suspense fallback={<BasicFallback fallbackType={FallbackTypeEnum.loading} />}>
-                <AppProvider >
-                  <AxiosProvider>
+                <AppProvider
+                  name={name}
+                  author={author}
+                  copyright={copyright}
+                  locales={locales}
+                >
+                  <AxiosProvider {...rest}>
                     {
                       router && <RouterProvider router={router} />
                     }

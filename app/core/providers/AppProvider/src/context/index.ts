@@ -3,7 +3,6 @@ import { createContext, useContext } from 'react';
 
 export interface AppContextProps {
     name: string;
-    organization: string;
     author: string;
     prefixCls: string;
     isMobile: boolean;
@@ -16,15 +15,12 @@ export const createAppContext = (props: AppContextProps) =>
 
 export const DEFAULT_APP_VALUE: AppContextProps = {
     name: 'Evefyou App',
-    organization: 'EvefyouFE',
     author: 'Evefyou',
     prefixCls: 'evefyou',
     isMobile: false,
-    copyright: `[author] Admin ©${new Date().getFullYear()}-now Created by [organization]`,
+    copyright: `[name] ©${new Date().getFullYear()}-now Created by [author]`,
     locales: []
 }
-DEFAULT_APP_VALUE.copyright = DEFAULT_APP_VALUE.copyright?.replace('[author]', DEFAULT_APP_VALUE.author)
-DEFAULT_APP_VALUE.copyright = DEFAULT_APP_VALUE.copyright?.replace('[organization]', DEFAULT_APP_VALUE.organization)
 
 export const AppContext = createAppContext(DEFAULT_APP_VALUE);
 

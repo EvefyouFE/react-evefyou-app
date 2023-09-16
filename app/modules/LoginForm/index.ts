@@ -1,6 +1,0 @@
-export * from './src'
-export * from './src/props'
-export * from './src/typing'
-export * from './src/components/LoginByMessage'
-export * from './src/components/LoginByQrCode'
-export * from './src/components/LoginByUsername'

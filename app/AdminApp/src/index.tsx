@@ -7,40 +7,40 @@
  * Copyright (c) 2023 by EvefyouFE/evef, All Rights Reserved. 
  */
 import { AdminAppProps } from "./props";
-import React from "react";
+import React, { useMemo } from "react";
 import { RecoilRoot } from "recoil";
 import { DebugObserver, initializeState } from "@core/stores/base";
 import { registerAppEnv } from "@/core/env";
 import { AdminAppComp } from "./components/AdminAppComp";
+import { generateRouter, getViewPaths } from "@/core/router";
 
 export const AdminApp: React.FC<AdminAppProps> = ({
   env,
-  configProviderProps,
+  version,
+  pageModules,
+  routeConfig,
+  includeDefaultPages = true,
   router,
-  locales,
-  locale,
   viewsPaths,
   recoilDebug = false,
   strictMode = false,
   children,
-  // onErrorInterceptor,
-  // onNotAuthenticated,
-  // onNotAuthorized,
-  // onResponseInterceptor,
-  // onSystemError,
-  // onTimeout
+  ...rest
 }) => {
-  registerAppEnv(env)
+  registerAppEnv({ version, env })
+  router ??= useMemo(
+    () => generateRouter(pageModules, routeConfig, includeDefaultPages)
+    , [pageModules, routeConfig, includeDefaultPages]
+  )
+  viewsPaths ??= useMemo(() => getViewPaths(pageModules), [pageModules])
   const comp = (
     <RecoilRoot initializeState={initializeState}>
       {
         recoilDebug && <DebugObserver />
       }
       <AdminAppComp
-        configProviderProps={configProviderProps}
+        {...rest}
         router={router}
-        locales={locales}
-        locale={locale}
         viewsPaths={viewsPaths}
       >
         {children}

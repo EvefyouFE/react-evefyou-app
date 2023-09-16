@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-app",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -213,42 +213,6 @@
       "require": "./cjs/common/utils/object/deepSetObjectByKeys/index.js",
       "import": "./es/common/utils/object/deepSetObjectByKeys/index.js"
     },
-    "./modules": {
-      "import": "./es/modules/index.js",
-      "require": "./cjs/modules/index.js"
-    },
-    "./modules/AppLogo": {
-      "import": "./es/modules/AppLogo/index.js",
-      "require": "./cjs/modules/AppLogo/index.js"
-    },
-    "./modules/Logout": {
-      "import": "./es/modules/Logout/index.js",
-      "require": "./cjs/modules/Logout/index.js"
-    },
-    "./modules/LoginForm": {
-      "import": "./es/modules/LoginForm/index.js",
-      "require": "./cjs/modules/LoginForm/index.js"
-    },
-    "./modules/LocaleDropdown": {
-      "import": "./es/modules/LocaleDropdown/index.js",
-      "require": "./cjs/modules/LocaleDropdown/index.js"
-    },
-    "./modules/UserActionDropdown": {
-      "import": "./es/modules/UserActionDropdown/index.js",
-      "require": "./cjs/modules/UserActionDropdown/index.js"
-    },
-    "./modules/ReminderPopoverTabs": {
-      "import": "./es/modules/ReminderPopoverTabs/index.js",
-      "require": "./cjs/modules/ReminderPopoverTabs/index.js"
-    },
-    "./sections": {
-      "import": "./es/sections/index.js",
-      "require": "./cjs/sections/index.js"
-    },
-    "./sections/ReminderSection": {
-      "import": "./es/sections/ReminderSection/index.js",
-      "require": "./cjs/sections/ReminderSection/index.js"
-    },
     "./pages": {
       "import": "./es/pages/index.js",
       "require": "./cjs/pages/index.js"
@@ -268,6 +232,42 @@
     "./ui": {
       "import": "./es/ui/index.js",
       "require": "./cjs/ui/index.js"
+    },
+    "./ui/modules": {
+      "import": "./es/ui/modules/index.js",
+      "require": "./cjs/ui/modules/index.js"
+    },
+    "./ui/modules/AppLogo": {
+      "import": "./es/ui/modules/AppLogo/index.js",
+      "require": "./cjs/ui/modules/AppLogo/index.js"
+    },
+    "./ui/modules/Logout": {
+      "import": "./es/ui/modules/Logout/index.js",
+      "require": "./cjs/ui/modules/Logout/index.js"
+    },
+    "./ui/modules/LoginForm": {
+      "import": "./es/ui/modules/LoginForm/index.js",
+      "require": "./cjs/ui/modules/LoginForm/index.js"
+    },
+    "./ui/modules/LocaleDropdown": {
+      "import": "./es/ui/modules/LocaleDropdown/index.js",
+      "require": "./cjs/ui/modules/LocaleDropdown/index.js"
+    },
+    "./ui/modules/UserActionDropdown": {
+      "import": "./es/ui/modules/UserActionDropdown/index.js",
+      "require": "./cjs/ui/modules/UserActionDropdown/index.js"
+    },
+    "./ui/modules/ReminderPopoverTabs": {
+      "import": "./es/ui/modules/ReminderPopoverTabs/index.js",
+      "require": "./cjs/ui/modules/ReminderPopoverTabs/index.js"
+    },
+    "./ui/sections": {
+      "import": "./es/ui/sections/index.js",
+      "require": "./cjs/ui/sections/index.js"
+    },
+    "./ui/sections/ReminderSection": {
+      "import": "./es/ui/sections/ReminderSection/index.js",
+      "require": "./cjs/ui/sections/ReminderSection/index.js"
     },
     "./ui/components": {
       "import": "./es/ui/components/index.js",
@@ -400,7 +400,7 @@
     "build": "tsc && vite build",
     "build:tsc": "tsc",
     "clean": "rimraf node_modules",
-    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite && rimraf node_modules/.pnpm",
     "clean:build": "rimraf es && rimraf cjs && rimraf css && rimraf dist && rimraf locale && rimraf types",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -421,10 +421,10 @@
   },
   "homepage": "https://github.com/EvefyouFE/react-evefyou-app#readme",
   "dependencies": {
-    "react-evefyou-common": "^1.0.17",
-    "react-evefyou-hooks": "^1.0.28",
-    "react-evefyou-router": "^1.0.16",
-    "react-evefyou-ui": "^1.0.28"
+    "react-evefyou-common": "^1.0.19",
+    "react-evefyou-hooks": "^1.0.30",
+    "react-evefyou-router": "^1.0.31",
+    "react-evefyou-ui": "^1.0.36"
   },
   "peerDependencies": {
     "@ant-design/icons": ">=5.0.1",

@@ -1,56 +1,94 @@
-import { CrRouteOptions, CrRouteViewConfig, PageModule } from "react-evefyou-router"
+import { CrRouteOptions, CrRouteConfig, PageModule, generateCrRoutes, getPageModulePaths } from "react-evefyou-router"
 import { errorBoundary } from './props/errorElement'
 import { crumbHandleFn } from './props/handle'
 import { wrapComponent } from './props/element'
-import { HomeLoaderData } from "./props/loader"
-import { RouteObject } from "react-router";
-export * from 'react-evefyou-router'
-export * from './props'
-import { generateCrRoutes, generateCrViewsPaths } from "react-evefyou-router"
+import { defaultIndexLoader } from './props/loader'
+import { RouteObject, RouterProviderProps } from "react-router";
 import React from "react"
 import { head, keys, last, pipe, split, values } from "ramda"
-
+import { getBaseName } from "../env"
+import { createBrowserRouter } from "react-router-dom"
+// import { AdminPage, LoginPage } from "@/pages"
 const errorElement = errorBoundary()
+
 const defaultModules = import.meta.glob<PageModule>('/app/core/router/pages/**/$*.{ts,tsx}', { eager: true })
-const defaultCrRouteViewConfig: CrRouteViewConfig = keys(defaultModules).reduce((acc, k) => {
+const defaultCrRouteViewConfig: CrRouteConfig = keys(defaultModules).reduce((acc, k) => {
   const name = pipe(
     split('pages/'),
     last,
     split('/'),
     head
-  )(k)
+  )(k) as string
   const isIndex = name === 'views'
   const comp = defaultModules[k].default
   const element = isIndex ? wrapComponent(comp) : comp
   const options: CrRouteOptions = {
     element: React.createElement(element),
-    path: '/',
+    path: isIndex ? '/' : '/'.concat(name),
     wrapComponent,
     errorElement,
-    handleFn: crumbHandleFn
+    loader: isIndex ? defaultIndexLoader : undefined,
+    handleFn: isIndex ? crumbHandleFn : undefined,
+    isIndex
   }
   acc[name as any] = options
   return acc
-}, {} as CrRouteViewConfig)
+}, {} as CrRouteConfig)
 
 export function generateRoutes(
-  modules: Record<string, () => Promise<PageModule>>,
-  loader: () => Promise<HomeLoaderData>,
-  expandConfig = {} as CrRouteViewConfig,
+  modules?: Record<string, () => Promise<PageModule>>,
+  expandConfig = {} as CrRouteConfig,
   includeDefaultPages = true,
 ): RouteObject[] {
-  defaultCrRouteViewConfig['views'].loader = loader
   if (!includeDefaultPages) {
     values(defaultCrRouteViewConfig).forEach(v => v.element = undefined)
   }
-  const crRouteViewConfig = {
+  let crRouteViewConfig = {
     ...defaultCrRouteViewConfig,
     ...expandConfig
+  } as CrRouteConfig
+  // if (isNotNil(expandConfig)) {
+  // const sameConfig: CrRouteConfig = pickBy((_, k) => has(k, defaultCrRouteViewConfig), expandConfig)
+  // keys(sameConfig).forEach(k => {
+  //   const loader = async () => {
+  //     await sameConfig[k].loader?.()
+  //     return await defaultCrRouteViewConfig[k].loader?.()
+  //   }
+  //   crRouteViewConfig[k].loader = loader
+  // })
+  // const otherConfig = omit(keys(sameConfig) as string[], expandConfig)
+  // crRouteViewConfig = {
+  //   ...defaultCrRouteViewConfig,
+  //   ...otherConfig
+  // }
+  // }
+  if (!modules) {
+    return keys(crRouteViewConfig).reduce((acc, k) => {
+      const {
+        path = '/'.concat(k as string),
+        ...rest
+      } = crRouteViewConfig[k]
+      acc.push({
+        ...rest,
+        path
+      })
+      return acc
+    }, [] as RouteObject[])
   }
-  const routes = generateCrRoutes(modules, crRouteViewConfig) as RouteObject[]
-  return routes
+  return generateCrRoutes(modules, crRouteViewConfig) as RouteObject[]
 }
 
-export function getModulePaths(modules: Record<string, () => Promise<PageModule>>): string[] {
-  return generateCrViewsPaths(modules)
+export const generateRouter = (
+  modules?: Record<string, () => Promise<PageModule>>,
+  expandConfig = {} as CrRouteConfig,
+  includeDefaultPages = true,
+): RouterProviderProps['router'] => {
+  const routes = generateRoutes(modules, expandConfig, includeDefaultPages)
+  return createBrowserRouter(routes, {
+    basename: getBaseName()
+  })
+}
+
+export const getViewPaths = (modules?: Record<string, () => Promise<PageModule>>): string[] => {
+  return modules ? getPageModulePaths(modules) : []
 }

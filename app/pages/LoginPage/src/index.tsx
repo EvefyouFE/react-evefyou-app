@@ -1,4 +1,4 @@
-import { LoginForm, LoginByUsernameReq } from "@modules/LoginForm";
+import { LoginForm, LoginByUsernameReq } from "react-evefyou-ui/modules/LoginForm";
 import { useCallback } from "react";
 import { ReactComponent as QQLogoSvg } from '@/assets/logo/qq_logo.svg';
 import { ReactComponent as WechatLogoSvg } from '@/assets/logo/wechat_logo.svg';
@@ -10,7 +10,7 @@ import { CommonLayout } from "react-evefyou-ui/layouts/CommonLayout";
 
 export const LoginPage = () => {
   const { prefixCls } = useDesign('login-page')
-  const { copyright } = useAppContext()
+  const { copyright, name } = useAppContext()
   const footerProps: BasicFooterProps = {
     content: copyright
   }
@@ -32,6 +32,7 @@ export const LoginPage = () => {
         qqLogo={< QQLogoSvg />}
         isLogging={isLoading}
         onLogin={onLogin}
+        title={name}
       />
     </CommonLayout>
   )

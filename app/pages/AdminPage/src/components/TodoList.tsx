@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 import { Tag } from "antd";
 import { BasicList, BasicListItem, useListInstance } from "react-evefyou-ui/components/BasicList";
-import { ReminderSection } from "@sections/ReminderSection";
+import { ReminderSection } from "react-evefyou-ui/sections/ReminderSection";
 import { PageReq } from "@common/models/base";
-import { queryGetTodoList } from "@core/query/api";
+import { queryGetTodoList } from "@/core/api";
+import 'virtual:windi.css';
 
 const getStateColor = (state: number) => {
   switch (state) {
@@ -22,7 +23,7 @@ const getStateColor = (state: number) => {
   }
 }
 export const TodoList: React.FC = () => {
-  const [basicListRef, { pagination }] = useListInstance()
+  const [basicListRef, { pagination }] = useListInstance({ pagination: { pageSize: 2 } })
   const paginationConfig = pagination ? pagination : {}
   const pageReq: PageReq = {
     pageNo: paginationConfig?.current ?? 1,

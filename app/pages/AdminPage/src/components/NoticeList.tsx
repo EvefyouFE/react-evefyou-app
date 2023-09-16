@@ -1,8 +1,9 @@
 import { useMemo } from "react";
 import { BasicList, BasicListItem, useListInstance } from "react-evefyou-ui/components/BasicList";
-import { ReminderSection } from "@sections/ReminderSection";
+import { ReminderSection } from "react-evefyou-ui/sections/ReminderSection";
 import { PageReq } from "@common/models/base";
-import { queryGetNoticeList } from "@core/query/api";
+import { queryGetNoticeList } from "@/core/api";
+import 'virtual:windi.css';
 
 export const NoticeList: React.FC = () => {
   const [basicListRef, { pagination }] = useListInstance()
