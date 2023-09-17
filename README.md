@@ -6,22 +6,27 @@
 
 <h1 align="center">React-Evefyou-App</h1>
 
-<div align="center">
+<div align="left">
 
 A Universal React18+ App Design library. Like Admin ...
+
+</div>
 
 English | [中文](./README-zh_CN.md)
 
 ## ✨ Features
 
+- React18+ React-router6+
 - Conventional Routing Page
 - Simple and easy-to-use fetch based on react-query
 - Based on recoil, store status can be defined in react like pinia
 - You can register properties in react instead of assigning them directly
 - KeepAlive Router
-- Using Windicss and css inject in every component
+- Using Ant Design UI
+- Using Tailwind Windicss and css inject in every component
 - Using react-intl to implement internationalization processing
 - Using react-evefyou-hooks define inheritable state hooks and support typecript
+- Base Vite build
 
 ## 📦 Install
 
@@ -46,11 +51,11 @@ import 'react-evefyou-app/windicss';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <AdminApp
     version={pkg.version}
+    name={pkg.name}
+    author={pkg.author.name}
     env={import.meta.env as unknown as AppImportMetaEnv}
     locales={locales}
     pageModules={import.meta.glob<PageModule>('/src/views/**/$*.{ts,tsx}')}
-    name="Evefyou Admin"
-    author="EvefyouFE"
     recoilDebug
     strictMode
   />

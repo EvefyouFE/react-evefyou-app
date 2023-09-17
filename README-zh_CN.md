@@ -6,22 +6,27 @@
 
 <h1 align="center">React-Evefyou-App</h1>
 
-<div align="center">
+<div align="left">
 
 通用 React18+ 应用程序设计库. 比如 管理系统应用 ...
+
+</div>
 
 中文 | [English](./README.md)
 
 ## ✨ 特性
 
+- React18+ React-router6+
 - 常规路由页面
 - 基于 react-query 的简单易用的 fetch
-- 基于反冲，可以像 pinia 一样在 react 中定义商店状态
+- 基于 recoil，可以像 pinia 一样在 react 中定义全局管理状态
 - 您可以在 react 中注册属性，而不是直接分配它们
-- 保持活动路由器
-- 在每个组件中使用 Windicss 和 css 注入
+- 缓存路由页面
+- 使用 Ant Design UI
+- 在每个组件中使用 Windicss（TailWind） 和 css 注入
 - 使用 react-intl 实现国际化处理
 - 使用 react-evefyou-hooks 定义可继承的状态钩子并支持 typecript
+- 基于 Vite 生态构建
 
 ## 📦 Install
 
@@ -46,11 +51,11 @@ import 'react-evefyou-app/windicss';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <AdminApp
     version={pkg.version}
+    name={pkg.name}
+    author={pkg.author.name}
     env={import.meta.env as unknown as AppImportMetaEnv}
     locales={locales}
     pageModules={import.meta.glob<PageModule>('/src/views/**/$*.{ts,tsx}')}
-    name="Evefyou Admin"
-    author="EvefyouFE"
     recoilDebug
     strictMode
   />

@@ -1,4 +1,4 @@
-import { CrRouteOptions, CrRouteConfig, PageModule, generateCrRoutes, getPageModulePaths } from "react-evefyou-router"
+import { CrRouteOptions, CrRouteConfig, PageModule, generateCrRoutes, getPageModulePaths, MenuTreeList } from "react-evefyou-router"
 import { errorBoundary } from './props/errorElement'
 import { crumbHandleFn } from './props/handle'
 import { wrapComponent } from './props/element'
@@ -8,7 +8,7 @@ import React from "react"
 import { head, keys, last, pipe, split, values } from "ramda"
 import { getBaseName } from "../env"
 import { createBrowserRouter } from "react-router-dom"
-// import { AdminPage, LoginPage } from "@/pages"
+
 const errorElement = errorBoundary()
 
 const defaultModules = import.meta.glob<PageModule>('/app/core/router/pages/**/$*.{ts,tsx}', { eager: true })
@@ -92,3 +92,5 @@ export const generateRouter = (
 export const getViewPaths = (modules?: Record<string, () => Promise<PageModule>>): string[] => {
   return modules ? getPageModulePaths(modules) : []
 }
+
+export type { PageModule, MenuTreeList }

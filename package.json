@@ -1,6 +1,6 @@
 {
   "name": "react-evefyou-app",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "",
   "type": "module",
   "main": "./cjs/index.js",
@@ -411,8 +411,15 @@
   },
   "keywords": [
     "react",
-    "project",
-    "evefyou"
+    "admin project",
+    "evefyou",
+    "vite",
+    "ant design",
+    "recoil",
+    "react-query",
+    "react-intl",
+    "react-router",
+    "react-evefyou-app"
   ],
   "author": "EvefyouFE",
   "license": "MIT",
