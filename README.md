@@ -8,7 +8,7 @@
 
 <div align="left">
 
-A Universal React18+ App Design library. Like Admin ...
+Simple and easy to use react application template design UI library.
 
 </div>
 
@@ -16,8 +16,9 @@ English | [中文](./README-zh_CN.md)
 
 ## ✨ Features
 
+- Only one App entry without setup router, fetch, store.
 - React18+ React-router6+
-- Conventional Routing Page
+- Conventional Routing
 - Simple and easy-to-use fetch based on react-query
 - Based on recoil, store status can be defined in react like pinia
 - You can register properties in react instead of assigning them directly

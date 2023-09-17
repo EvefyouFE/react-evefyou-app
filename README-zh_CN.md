@@ -8,7 +8,7 @@
 
 <div align="left">
 
-通用 React18+ 应用程序设计库. 比如 管理系统应用 ...
+简洁容易上手的 react 应用模板设计 UI 库
 
 </div>
 
@@ -16,8 +16,9 @@
 
 ## ✨ 特性
 
+- 只有一个 App 入口，无需设置 router、fetch、store
 - React18+ React-router6+
-- 常规路由页面
+- 约定式路由
 - 基于 react-query 的简单易用的 fetch
 - 基于 recoil，可以像 pinia 一样在 react 中定义全局管理状态
 - 您可以在 react 中注册属性，而不是直接分配它们
